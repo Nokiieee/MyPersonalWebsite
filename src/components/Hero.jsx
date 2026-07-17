@@ -15,7 +15,6 @@ function Hero() {
         </span>
         <h1 className="text-[clamp(38px,6vw,66px)] font-extrabold leading-[1.05] text-ink">
           Hi, I'm <span className="inline-block text-purple">Enoch Mendoza</span>
-          <span className="text-pink">.</span>
         </h1>
         <p className="mt-[22px] max-w-[500px] text-lg leading-[1.7] text-ink-soft max-[960px]:mx-auto">
           I turn ideas into real, working web applications — from clean APIs to
