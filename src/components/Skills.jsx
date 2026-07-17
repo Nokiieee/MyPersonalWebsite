@@ -28,30 +28,34 @@ const skills = [
 
 function Skills() {
   return (
-    <section className="section skills" id="skills">
-      <div className="section__head reveal">
-        <span className="section__eyebrow">My toolbox</span>
-        <h2 className="section__title">Skills &amp; Tech Stack</h2>
-        <p className="section__lead">
+    <section className="section" id="skills">
+      <div className="section-head reveal">
+        <span className="eyebrow">My toolbox</span>
+        <h2 className="section-title">Skills &amp; Tech Stack</h2>
+        <p className="section-lead">
           The tools I reach for to design, build, and ship full-stack web
           applications.
         </p>
       </div>
 
-      <div className="skills__grid">
+      <div className="grid grid-cols-6 gap-[18px] max-[960px]:grid-cols-4 max-[720px]:grid-cols-3 max-[420px]:grid-cols-2">
         {skills.map((s, i) => (
           <div
-            className="skill-card reveal"
+            className="card flex flex-col items-center gap-3 rounded-card px-3 py-6 transition hover:-translate-y-1.5 hover:border-purple hover:shadow-hover reveal"
             key={s.name}
             style={{ '--reveal-delay': `${i * 60}ms` }}
           >
             <span
-              className="skill-card__icon"
+              className="skill-icon grid h-[52px] w-[52px] place-items-center rounded-2xl"
               style={{ '--skill-color': s.color }}
             >
-              <img src={s.icon} alt={s.name} className="skill-card__icon-img" />
+              <img
+                src={s.icon}
+                alt={s.name}
+                className="h-[30px] w-[30px] object-contain dark:brightness-[1.9] dark:invert"
+              />
             </span>
-            <span className="skill-card__name">{s.name}</span>
+            <span className="text-sm font-semibold text-ink">{s.name}</span>
           </div>
         ))}
       </div>

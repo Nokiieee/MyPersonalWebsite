@@ -27,37 +27,48 @@ const projects = [
 
 function Projects() {
   return (
-    <section className="section projects" id="projects">
-      <div className="section__head reveal">
-        <span className="section__eyebrow">Recent work</span>
-        <h2 className="section__title">Featured Projects</h2>
-        <p className="section__lead">
+    <section className="section" id="projects">
+      <div className="section-head reveal">
+        <span className="eyebrow">Recent work</span>
+        <h2 className="section-title">Featured Projects</h2>
+        <p className="section-lead">
           A few things I've built while sharpening my craft as a developer.
         </p>
       </div>
 
-      <div className="projects__grid">
+      <div className="grid grid-cols-3 gap-[26px] max-[960px]:grid-cols-2 max-[720px]:grid-cols-1">
         {projects.map((p, i) => (
           <article
-            className="project-card reveal"
+            className="card flex flex-col overflow-hidden rounded-card-lg shadow-soft transition hover:-translate-y-2 hover:shadow-hover reveal"
             key={p.title}
             style={{ '--reveal-delay': `${i * 100}ms` }}
           >
-            <div className="project-card__thumb">
-              <span className="project-card__emoji">{p.emoji}</span>
+            <div className="relative grid h-[150px] place-items-center bg-brand after:absolute after:inset-0 after:bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.35),transparent_60%)] after:content-['']">
+              <span className="text-[54px] drop-shadow-[0_6px_12px_rgba(0,0,0,0.2)]">
+                {p.emoji}
+              </span>
             </div>
-            <div className="project-card__body">
-              <h3 className="project-card__title">{p.title}</h3>
-              <p className="project-card__desc">{p.description}</p>
-              <div className="project-card__tags">
+            <div className="flex flex-1 flex-col p-6">
+              <h3 className="mb-2.5 text-[21px] font-bold text-ink">
+                {p.title}
+              </h3>
+              <p className="mb-[18px] flex-1 text-[15px] leading-[1.6] text-ink-soft">
+                {p.description}
+              </p>
+              <div className="mb-5 flex flex-wrap gap-2">
                 {p.tags.map((t) => (
-                  <span key={t}>{t}</span>
+                  <span
+                    key={t}
+                    className="rounded-full bg-[rgba(184,139,255,0.16)] px-3 py-[5px] text-xs font-semibold text-purple-deep"
+                  >
+                    {t}
+                  </span>
                 ))}
               </div>
-              <div className="project-card__links">
+              <div className="flex gap-2.5">
                 <a
                   href={p.url}
-                  className="btn btn--primary btn--sm"
+                  className="btn btn-primary btn-sm"
                   target="_blank"
                   rel="noreferrer"
                 >

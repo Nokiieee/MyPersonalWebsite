@@ -31,26 +31,30 @@ const services = [
 
 function Services() {
   return (
-    <section className="section services" id="services">
-      <div className="section__head reveal">
-        <span className="section__eyebrow">What I offer</span>
-        <h2 className="section__title">Services</h2>
-        <p className="section__lead">
+    <section className="section" id="services">
+      <div className="section-head reveal">
+        <span className="eyebrow">What I offer</span>
+        <h2 className="section-title">Services</h2>
+        <p className="section-lead">
           How I can help bring your web project to life — from first pixel to
           deployed product.
         </p>
       </div>
 
-      <div className="services__grid">
+      <div className="grid grid-cols-3 gap-6 max-[960px]:grid-cols-2 max-[720px]:grid-cols-1">
         {services.map((s, i) => (
           <article
-            className="service-card reveal"
+            className="card rounded-card-lg px-7 py-8 transition hover:-translate-y-1.5 hover:shadow-hover reveal"
             key={s.title}
             style={{ '--reveal-delay': `${i * 100}ms` }}
           >
-            <span className="service-card__icon">{s.icon}</span>
-            <h3 className="service-card__title">{s.title}</h3>
-            <p className="service-card__desc">{s.description}</p>
+            <span className="mb-5 grid h-[60px] w-[60px] place-items-center rounded-[18px] bg-brand text-3xl shadow-soft">
+              {s.icon}
+            </span>
+            <h3 className="mb-3 text-[19px] font-bold text-ink">{s.title}</h3>
+            <p className="text-[15px] leading-[1.65] text-ink-soft">
+              {s.description}
+            </p>
           </article>
         ))}
       </div>

@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400..900;1,400..800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import 'tailwindcss';
+
+/* Dark mode is driven by the data-theme attribute that the useTheme hook
+   sets on <html> (not the OS preference), so wire the dark: variant to it. */
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+/* ------------------------------------------------------------------
+   Raw design tokens — these switch between light and dark. Semantic
+   Tailwind color/shadow utilities below reference them via @theme inline,
+   so `bg-card`, `text-ink`, `shadow-soft`, etc. update with the theme.
+   ------------------------------------------------------------------ */
+:root {
+  --c-purple: #7b2ff7;
+  --c-purple-deep: #5a1fd0;
+  --c-pink: #ff7eb3;
+  --c-ink: #2c2440;
+  --c-ink-soft: #6b6382;
+  --c-card: rgba(255, 255, 255, 0.72);
+  --c-line: rgba(184, 139, 255, 0.28);
+
+  --sh-soft: 0 18px 40px -18px rgba(123, 47, 247, 0.35);
+  --sh-hover: 0 26px 55px -18px rgba(123, 47, 247, 0.5);
+
+  --gradient-brand: linear-gradient(120deg, #7b2ff7 0%, #b16cff 45%, #ff7eb3 100%);
+  --page-bg: linear-gradient(150deg, #f6f0ff 0%, #fdeeffcc 40%, #fff4ec 100%);
+}
+
+[data-theme='dark'] {
+  --c-purple: #a982ff;
+  --c-purple-deep: #8b5bff;
+  --c-ink: #ece8f7;
+  --c-ink-soft: #a9a2c4;
+  --c-card: rgba(38, 30, 56, 0.62);
+  --c-line: rgba(169, 130, 255, 0.24);
+
+  --sh-soft: 0 18px 40px -18px rgba(0, 0, 0, 0.6);
+  --sh-hover: 0 26px 55px -18px rgba(0, 0, 0, 0.72);
+
+  --page-bg: linear-gradient(150deg, #120e1f 0%, #1a1330 45%, #1b1426 100%);
+}
+
+@theme inline {
+  --color-purple: var(--c-purple);
+  --color-purple-deep: var(--c-purple-deep);
+  --color-pink: var(--c-pink);
+  --color-ink: var(--c-ink);
+  --color-ink-soft: var(--c-ink-soft);
+  --color-card: var(--c-card);
+  --color-line: var(--c-line);
+
+  --shadow-soft: var(--sh-soft);
+  --shadow-hover: var(--sh-hover);
+
+  --radius-card: 22px;
+  --radius-card-lg: 30px;
+
+  --font-display: 'Montserrat', sans-serif;
+  --font-body: 'Poppins', system-ui, sans-serif;
+
+  --animate-float: float 16s ease-in-out infinite;
+  --animate-bob: bob 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(30px, -30px) scale(1.08);
+  }
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    overscroll-behavior-x: none;
+    touch-action: pan-y;
+    /* clip (not hidden) stops horizontal overscroll without breaking the
+       sticky navbar or creating a scroll container */
+    overflow-x: clip;
+  }
+
+  body {
+    margin: 0;
+    overflow-x: clip;
+    overscroll-behavior-x: none;
+    touch-action: pan-y;
+    font-family: var(--font-body);
+    color: var(--c-ink);
+    background: var(--page-bg);
+    background-attachment: fixed;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  /* Buttons */
+  .btn {
+    @apply inline-flex cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-full border-2 border-transparent px-[26px] py-[13px] font-body text-[15px] font-semibold transition;
+  }
+  .btn-sm {
+    @apply px-[18px] py-[9px] text-[13.5px];
+  }
+  .btn-primary {
+    @apply bg-purple text-white shadow-soft hover:-translate-y-0.5 hover:bg-purple-deep hover:shadow-hover;
+  }
+  .btn-ghost {
+    @apply border-purple bg-white/60 text-purple-deep hover:-translate-y-0.5 hover:bg-white/95 dark:bg-white/5 dark:text-purple dark:hover:bg-white/10;
+  }
+
+  /* Frosted-glass card used across sections */
+  .card {
+    @apply border border-line bg-card backdrop-blur-[6px];
+  }
+
+  /* Section shell + heading block */
+  .section {
+    @apply mx-auto max-w-[1180px] scroll-mt-20 px-6 py-[90px] max-[720px]:px-5 max-[720px]:py-16;
+  }
+  .section-head {
+    @apply mx-auto mb-[54px] max-w-[640px] text-center max-[720px]:mb-10;
+  }
+  .eyebrow {
+    @apply mb-4 inline-block rounded-full bg-[rgba(184,139,255,0.16)] px-4 py-1.5 text-[13px] font-semibold uppercase tracking-[1.5px] text-purple;
+  }
+  .section-title {
+    @apply text-[clamp(30px,5vw,46px)] font-extrabold text-ink;
+  }
+  .section-lead {
+    @apply mx-auto mt-4 text-[17px] leading-[1.65] text-ink-soft;
+  }
+
+  /* Skill icon tile — color-mix uses the per-skill --skill-color var */
+  .skill-icon {
+    background: color-mix(in srgb, var(--skill-color) 16%, white);
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--skill-color) 28%, transparent);
+  }
+  [data-theme='dark'] .skill-icon {
+    background: color-mix(in srgb, var(--skill-color) 26%, #241b33);
+  }
+}
+
+/* Brand gradient background helper */
+.bg-brand {
+  background-image: var(--gradient-brand);
+}
+
+/* ------------------------------------------------------------------
+   Scroll-reveal — elements with .reveal fade/slide in once the
+   useScrollReveal hook adds .is-visible.
+   ------------------------------------------------------------------ */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation: none !important;
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

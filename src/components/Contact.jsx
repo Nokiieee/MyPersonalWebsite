@@ -2,6 +2,9 @@ import { useState } from 'react'
 
 const EMAIL = 'aje.mendozaa@gmail.com'
 
+const fieldClass =
+  'resize-y rounded-[14px] border border-line bg-white/80 px-4 py-[13px] font-body text-[15px] text-ink transition focus:border-purple focus:shadow-[0_0_0_3px_rgba(123,47,247,0.15)] focus:outline-none dark:bg-white/5 dark:placeholder:text-ink-soft'
+
 function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
 
@@ -19,33 +22,36 @@ function Contact() {
   }
 
   return (
-    <section className="section contact" id="contact">
-      <div className="section__head reveal">
-        <span className="section__eyebrow">Say hello</span>
-        <h2 className="section__title">Let's Connect</h2>
-        <p className="section__lead">
+    <section className="section" id="contact">
+      <div className="section-head reveal">
+        <span className="eyebrow">Say hello</span>
+        <h2 className="section-title">Let's Connect</h2>
+        <p className="section-lead">
           Open to remote opportunities and freelance work. Have an idea or a
           role in mind? Drop me a message.
         </p>
       </div>
 
-      <div className="contact__grid">
-        <div className="contact__info reveal">
-          <h3 className="contact__info-title">Get in touch ✨</h3>
-          <p className="contact__info-text">
+      <div className="grid grid-cols-[1fr_1.15fr] items-stretch gap-10 max-[960px]:grid-cols-1">
+        <div className="reveal rounded-card-lg bg-brand p-10 text-white shadow-soft max-[720px]:p-7 max-[720px]:text-center">
+          <h3 className="mb-3.5 text-[26px] font-extrabold">Get in touch ✨</h3>
+          <p className="mb-[30px] text-base leading-[1.7] opacity-90">
             I'm currently open to remote opportunities where I can learn,
             contribute, and build things that matter.
           </p>
 
-          <a href={`mailto:${EMAIL}`} className="contact__email">
-            <span className="contact__email-icon">✉️</span>
+          <a
+            href={`mailto:${EMAIL}`}
+            className="inline-flex items-center gap-2.5 break-all rounded-[14px] bg-white/[0.18] px-[18px] py-3 text-[15px] font-semibold transition hover:bg-white/30 max-[720px]:justify-center"
+          >
+            <span>✉️</span>
             {EMAIL}
           </a>
 
-          <div className="contact__socials">
+          <div className="mt-7 flex gap-3 max-[720px]:justify-center">
             <a
               href="https://github.com/Nokiieee/"
-              className="contact__social"
+              className="grid h-[46px] w-[46px] place-items-center rounded-[14px] bg-white/90 transition hover:-translate-y-[3px] hover:bg-white"
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub"
@@ -58,44 +64,47 @@ function Contact() {
         </div>
 
         <form
-          className="contact__form reveal"
+          className="card reveal flex flex-col gap-[18px] rounded-card-lg p-[34px] max-[720px]:p-7"
           style={{ '--reveal-delay': '120ms' }}
           onSubmit={handleSubmit}
         >
-          <label className="contact__field">
-            <span>Name</span>
+          <label className="flex flex-col gap-2">
+            <span className="text-sm font-semibold text-ink">Name</span>
             <input
               type="text"
               name="name"
               value={form.name}
               onChange={handleChange}
               placeholder="Your name"
+              className={fieldClass}
               required
             />
           </label>
-          <label className="contact__field">
-            <span>Email</span>
+          <label className="flex flex-col gap-2">
+            <span className="text-sm font-semibold text-ink">Email</span>
             <input
               type="email"
               name="email"
               value={form.email}
               onChange={handleChange}
               placeholder="you@example.com"
+              className={fieldClass}
               required
             />
           </label>
-          <label className="contact__field">
-            <span>Message</span>
+          <label className="flex flex-col gap-2">
+            <span className="text-sm font-semibold text-ink">Message</span>
             <textarea
               name="message"
               value={form.message}
               onChange={handleChange}
               placeholder="Tell me about your project or role..."
               rows={5}
+              className={fieldClass}
               required
             />
           </label>
-          <button type="submit" className="btn btn--primary contact__submit">
+          <button type="submit" className="btn btn-primary mt-1.5 self-start">
             Send Message
           </button>
         </form>
