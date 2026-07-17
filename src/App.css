@@ -36,12 +36,16 @@
 
 html {
   scroll-behavior: smooth;
+  overscroll-behavior-x: none;
+  touch-action: pan-y;
 }
 
 body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  overscroll-behavior-x: none;
+  touch-action: pan-y;
   font-family: 'Poppins', system-ui, sans-serif;
   color: var(--text);
   background: linear-gradient(150deg, #f6f0ff 0%, #fdeeffcc 40%, #fff4ec 100%);
