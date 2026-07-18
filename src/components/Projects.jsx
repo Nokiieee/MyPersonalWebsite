@@ -1,8 +1,12 @@
-import { LuWallet, LuUtensilsCrossed, LuBrain, LuArrowUpRight } from 'react-icons/lu'
+import { LuArrowUpRight } from 'react-icons/lu'
+import financeTrackerImg from '../assets/FinanceTracker.png'
+import mcdonaldsImg from '../assets/McDonalds.png'
+import quizReviewerImg from '../assets/QuizReviewer.png'
 
 const projects = [
   {
-    Icon: LuWallet,
+    image: financeTrackerImg,
+    imgClassName: 'object-top',
     title: 'Personal Finance Tracker',
     description:
       'A full-stack MERN app to track income and expenses, manage transactions, and see where your money goes.',
@@ -10,7 +14,8 @@ const projects = [
     url: 'https://personal-finance-tracker-practice-ten.vercel.app/',
   },
   {
-    Icon: LuUtensilsCrossed,
+    image: mcdonaldsImg,
+    imgClassName: 'object-top',
     title: "McDonald's Landing Page",
     description:
       "A responsive McDonald's landing page built with React — a clean recreation of the brand's modern web experience.",
@@ -18,7 +23,8 @@ const projects = [
     url: 'https://mc-donald-s-five.vercel.app/',
   },
   {
-    Icon: LuBrain,
+    image: quizReviewerImg,
+    imgClassName: 'origin-top scale-[1.75] object-top',
     title: 'Quiz Reviewer',
     description:
       'A study tool for building custom flashcard sets and reviewing them with term/definition pairs and progress tracking.',
@@ -45,12 +51,12 @@ function Projects() {
             key={p.title}
             style={{ '--reveal-delay': `${i * 100}ms` }}
           >
-            <div className="relative grid h-[150px] place-items-center bg-brand after:absolute after:inset-0 after:bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.35),transparent_60%)] after:content-['']">
-              <p.Icon
-                className="text-white drop-shadow-[0_6px_12px_rgba(0,0,0,0.2)]"
-                size={48}
-                strokeWidth={1.75}
-                aria-hidden="true"
+            <div className="relative h-[190px] overflow-hidden bg-brand">
+              <img
+                src={p.image}
+                alt={`${p.title} screenshot`}
+                loading="lazy"
+                className={`h-full w-full object-cover ${p.imgClassName}`}
               />
             </div>
             <div className="flex flex-1 flex-col p-6">
