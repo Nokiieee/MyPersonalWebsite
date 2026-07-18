@@ -1,4 +1,4 @@
-import nokiPic from '../assets/nokiPic.jpg'
+import nokiPic from '../assets/nokiPic2.JPG'
 
 function About() {
   return (
@@ -10,7 +10,7 @@ function About() {
 
       <div className="grid grid-cols-[0.8fr_1.2fr] items-center gap-[54px] max-[960px]:grid-cols-1 max-[960px]:gap-9">
         <div className="reveal flex justify-center max-[960px]:mx-auto max-[960px]:max-w-[340px]">
-          <div className="aspect-square w-[min(320px,100%)] rounded-card-lg bg-brand p-2 shadow-soft">
+          <div className="aspect-[3/4] w-[min(320px,100%)] rounded-card-lg bg-brand p-2 shadow-soft">
             <img
               src={nokiPic}
               alt="Enoch Mendoza"
