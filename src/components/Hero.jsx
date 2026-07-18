@@ -9,7 +9,7 @@ function Hero() {
       className="mx-auto grid max-w-[1180px] scroll-mt-20 grid-cols-[1.05fr_0.95fr] items-center gap-10 px-6 pb-[90px] pt-[70px] min-h-[calc(100vh-72px)] max-[960px]:min-h-0 max-[960px]:grid-cols-1 max-[960px]:gap-12 max-[960px]:pt-12 max-[960px]:text-center max-[420px]:pt-8"
       id="home"
     >
-      <div>
+      <div className="animate-hero-fade-up">
         <span className="mb-[22px] inline-block rounded-full border border-line bg-white/70 px-[18px] py-2 text-sm font-semibold text-purple-deep dark:bg-white/5">
           MERN Stack Developer
         </span>
@@ -37,7 +37,7 @@ function Hero() {
         </div>
       </div>
 
-      <div className="relative flex items-center justify-center max-[960px]:order-first">
+      <div className="relative flex animate-hero-fade-up items-center justify-center [animation-delay:150ms] max-[960px]:order-first">
         <div
           className="absolute z-0 aspect-square w-[78%] rounded-full bg-brand opacity-45 blur-[60px]"
           aria-hidden="true"

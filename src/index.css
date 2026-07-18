@@ -60,6 +60,7 @@
 
   --animate-float: float 16s ease-in-out infinite;
   --animate-bob: bob 6s ease-in-out infinite;
+  --animate-hero-fade-up: hero-fade-up 1.4s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 @keyframes float {
@@ -79,6 +80,17 @@
   }
   50% {
     transform: translateY(-12px);
+  }
+}
+
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(48px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
