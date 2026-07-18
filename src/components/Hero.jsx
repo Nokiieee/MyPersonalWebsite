@@ -1,7 +1,7 @@
-import nokiPic from '../assets/nokiPic.jpg'
+import nokiPic from "../assets/nokiPic.jpg";
 
 const pill =
-  'rounded-full border border-line px-[15px] py-[7px] text-[13px] font-semibold text-purple-deep dark:bg-white/5'
+  "rounded-full border border-line px-[15px] py-[7px] text-[13px] font-semibold text-purple-deep dark:bg-white/5";
 
 function Hero() {
   return (
@@ -11,10 +11,11 @@ function Hero() {
     >
       <div>
         <span className="mb-[22px] inline-block rounded-full border border-line bg-white/70 px-[18px] py-2 text-sm font-semibold text-purple-deep dark:bg-white/5">
-          ✨ MERN Stack Developer
+          MERN Stack Developer
         </span>
         <h1 className="text-[clamp(38px,6vw,66px)] font-extrabold leading-[1.05] text-ink">
-          Hi, I'm <span className="inline-block text-purple">Enoch Mendoza</span>
+          Hi, I'm{" "}
+          <span className="inline-block text-purple">Enoch Mendoza</span>
         </h1>
         <p className="mt-[22px] max-w-[500px] text-lg leading-[1.7] text-ink-soft max-[960px]:mx-auto">
           I turn ideas into real, working web applications — from clean APIs to
@@ -52,11 +53,11 @@ function Hero() {
           &lt;/&gt; Full-Stack
         </div>
         <div className="absolute bottom-[8%] right-0 z-[2] animate-bob rounded-2xl border border-line bg-white/90 px-4 py-2.5 text-sm font-semibold text-ink shadow-soft [animation-delay:-4s] dark:bg-[rgba(38,30,56,0.92)]">
-          🚀 Open to work
+          Let's build
         </div>
       </div>
     </header>
-  )
+  );
 }
 
-export default Hero
+export default Hero;

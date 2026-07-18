@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { LuSun, LuMoon, LuMenu, LuX, LuSparkles } from 'react-icons/lu'
 import useTheme from '../hooks/useTheme'
 
 const links = [
@@ -41,7 +42,12 @@ function Navbar() {
           className="font-display text-2xl font-extrabold text-ink"
           onClick={close}
         >
-          Enoch<span className="ml-0.5 text-purple">✦</span>
+          Enoch
+          <LuSparkles
+            className="ml-0.5 inline-block align-[-2px] text-purple"
+            size={18}
+            aria-hidden="true"
+          />
         </a>
 
         <div className="flex items-center gap-2.5">
@@ -77,30 +83,16 @@ function Navbar() {
               aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
               title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
             >
-              {theme === 'dark' ? '☀️' : '🌙'}
+              {theme === 'dark' ? <LuSun size={20} /> : <LuMoon size={20} />}
             </button>
 
             <button
-              className="z-[60] hidden h-[22px] w-[30px] cursor-pointer flex-col justify-between border-none bg-transparent p-0 max-[960px]:flex"
+              className="z-[60] hidden h-[42px] w-[42px] cursor-pointer place-items-center rounded-xl border border-line bg-card text-ink transition hover:-translate-y-0.5 hover:border-purple max-[960px]:grid"
               aria-label="Toggle menu"
               aria-expanded={open}
               onClick={() => setOpen((v) => !v)}
             >
-              <span
-                className={`block h-[3px] w-full rounded-[3px] bg-ink transition ${
-                  open ? 'translate-y-[9.5px] rotate-45' : ''
-                }`}
-              />
-              <span
-                className={`block h-[3px] w-full rounded-[3px] bg-ink transition ${
-                  open ? 'opacity-0' : ''
-                }`}
-              />
-              <span
-                className={`block h-[3px] w-full rounded-[3px] bg-ink transition ${
-                  open ? '-translate-y-[9.5px] -rotate-45' : ''
-                }`}
-              />
+              {open ? <LuX size={20} /> : <LuMenu size={20} />}
             </button>
           </div>
         </div>

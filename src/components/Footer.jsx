@@ -1,3 +1,5 @@
+import { LuSparkles, LuHeart } from 'react-icons/lu'
+
 function Footer() {
   const year = new Date().getFullYear()
   return (
@@ -7,7 +9,12 @@ function Footer() {
           href="#home"
           className="font-display text-[22px] font-extrabold text-ink"
         >
-          Enoch<span className="ml-0.5 text-purple">✦</span>
+          Enoch
+          <LuSparkles
+            className="ml-0.5 inline-block align-[-2px] text-purple"
+            size={18}
+            aria-hidden="true"
+          />
         </a>
         <p className="text-[15px] text-ink-soft">
           MERN Stack Developer · Building things that matter.
@@ -44,8 +51,10 @@ function Footer() {
             Contact
           </a>
         </nav>
-        <p className="mt-1.5 text-[13.5px] text-ink-soft">
-          © {year} Enoch Mendoza. Made with 💜 &amp; React.
+        <p className="mt-1.5 inline-flex items-center gap-1 text-[13.5px] text-ink-soft">
+          © {year} Enoch Mendoza. Made with
+          <LuHeart className="text-purple" fill="currentColor" size={14} aria-hidden="true" />
+          &amp; React.
         </p>
       </div>
     </footer>

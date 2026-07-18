@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { LuMail } from 'react-icons/lu'
+import githubIcon from '../assets/github.svg'
 
 const EMAIL = 'aje.mendozaa@gmail.com'
 
@@ -44,7 +46,7 @@ function Contact() {
             href={`mailto:${EMAIL}`}
             className="inline-flex items-center gap-2.5 break-all rounded-[14px] bg-white/[0.18] px-[18px] py-3 text-[15px] font-semibold transition hover:bg-white/30 max-[720px]:justify-center"
           >
-            <span>✉️</span>
+            <LuMail size={18} aria-hidden="true" />
             {EMAIL}
           </a>
 
@@ -56,9 +58,11 @@ function Contact() {
               rel="noreferrer"
               aria-label="GitHub"
             >
-              <svg width="22" height="22" aria-hidden="true">
-                <use href="/icons.svg#github-icon" />
-              </svg>
+              <img
+                src={githubIcon}
+                alt="GitHub"
+                className="h-[22px] w-[22px] object-contain"
+              />
             </a>
           </div>
         </div>

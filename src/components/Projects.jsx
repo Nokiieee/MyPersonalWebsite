@@ -1,6 +1,8 @@
+import { LuWallet, LuUtensilsCrossed, LuBrain, LuArrowUpRight } from 'react-icons/lu'
+
 const projects = [
   {
-    emoji: '💰',
+    Icon: LuWallet,
     title: 'Personal Finance Tracker',
     description:
       'A full-stack MERN app to track income and expenses, manage transactions, and see where your money goes.',
@@ -8,7 +10,7 @@ const projects = [
     url: 'https://personal-finance-tracker-practice-ten.vercel.app/',
   },
   {
-    emoji: '🍔',
+    Icon: LuUtensilsCrossed,
     title: "McDonald's Landing Page",
     description:
       "A responsive McDonald's landing page built with React — a clean recreation of the brand's modern web experience.",
@@ -16,7 +18,7 @@ const projects = [
     url: 'https://mc-donald-s-five.vercel.app/',
   },
   {
-    emoji: '🧠',
+    Icon: LuBrain,
     title: 'Quiz Reviewer',
     description:
       'A study tool for building custom flashcard sets and reviewing them with term/definition pairs and progress tracking.',
@@ -44,9 +46,12 @@ function Projects() {
             style={{ '--reveal-delay': `${i * 100}ms` }}
           >
             <div className="relative grid h-[150px] place-items-center bg-brand after:absolute after:inset-0 after:bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.35),transparent_60%)] after:content-['']">
-              <span className="text-[54px] drop-shadow-[0_6px_12px_rgba(0,0,0,0.2)]">
-                {p.emoji}
-              </span>
+              <p.Icon
+                className="text-white drop-shadow-[0_6px_12px_rgba(0,0,0,0.2)]"
+                size={48}
+                strokeWidth={1.75}
+                aria-hidden="true"
+              />
             </div>
             <div className="flex flex-1 flex-col p-6">
               <h3 className="mb-2.5 text-[21px] font-bold text-ink">
@@ -68,11 +73,12 @@ function Projects() {
               <div className="flex gap-2.5">
                 <a
                   href={p.url}
-                  className="btn btn-primary btn-sm"
+                  className="btn btn-primary btn-sm inline-flex items-center gap-1.5"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  View Project ↗
+                  View Project
+                  <LuArrowUpRight size={16} aria-hidden="true" />
                 </a>
               </div>
             </div>

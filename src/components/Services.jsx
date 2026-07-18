@@ -1,28 +1,30 @@
+import { LuPalette, LuPlug, LuDatabase, LuPuzzle, LuWrench } from 'react-icons/lu'
+
 const services = [
   {
-    icon: '🎨',
+    Icon: LuPalette,
     title: 'Front-End Development',
     description:
       'Building responsive, user-friendly interfaces with React.js, HTML5, and CSS3.',
   },
   {
-    icon: '🔌',
+    Icon: LuPlug,
     title: 'Back-End Development',
     description: 'Designing RESTful APIs with Node.js and Express.js.',
   },
   {
-    icon: '🗄️',
+    Icon: LuDatabase,
     title: 'Database Design',
     description: 'Structuring and managing data using MongoDB.',
   },
   {
-    icon: '🧩',
+    Icon: LuPuzzle,
     title: 'Full-Stack Web Applications',
     description:
       'Connecting front-end and back-end into complete, working products.',
   },
   {
-    icon: '🛠️',
+    Icon: LuWrench,
     title: 'Bug Fixing & Code Improvements',
     description:
       'Reviewing and refining existing codebases for performance and clarity.',
@@ -48,8 +50,8 @@ function Services() {
             key={s.title}
             style={{ '--reveal-delay': `${i * 100}ms` }}
           >
-            <span className="mb-5 grid h-[60px] w-[60px] place-items-center rounded-[18px] bg-brand text-3xl shadow-soft">
-              {s.icon}
+            <span className="mb-5 grid h-[60px] w-[60px] place-items-center rounded-[18px] bg-brand text-white shadow-soft">
+              <s.Icon size={28} strokeWidth={1.75} aria-hidden="true" />
             </span>
             <h3 className="mb-3 text-[19px] font-bold text-ink">{s.title}</h3>
             <p className="text-[15px] leading-[1.65] text-ink-soft">
