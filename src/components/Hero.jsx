@@ -18,8 +18,8 @@ function Hero() {
           <span className="inline-block text-purple">Enoch Mendoza</span>
         </h1>
         <p className="mt-[22px] max-w-[500px] text-lg leading-[1.7] text-ink-soft max-[960px]:mx-auto">
-          I turn ideas into real, working web applications — from clean APIs to
-          interfaces that just feel right to use.
+          A full-stack developer who builds web applications using MERN Stack. I
+          turn ideas into real, working web applications
         </p>
         <div className="mt-8 flex flex-wrap gap-[14px] max-[960px]:justify-center">
           <a href="#projects" className="btn btn-primary max-[420px]:flex-1">

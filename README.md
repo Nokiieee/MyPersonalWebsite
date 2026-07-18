@@ -56,7 +56,7 @@ src/
 
 ## 📬 Contact
 
-- **Email:** aje.mendozaa@gmail.com
+- **Email:** denenoch.mendoza@gmail.com
 
 ---
 

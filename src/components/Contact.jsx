@@ -1,27 +1,27 @@
-import { useState } from 'react'
-import { LuMail } from 'react-icons/lu'
-import githubIcon from '../assets/github.svg'
+import { useState } from "react";
+import { LuMail } from "react-icons/lu";
+import githubIcon from "../assets/github.svg";
 
-const EMAIL = 'aje.mendozaa@gmail.com'
+const EMAIL = "denenoch.mendoza@gmail.com";
 
 const fieldClass =
-  'resize-y rounded-[14px] border border-line bg-white/80 px-4 py-[13px] font-body text-[15px] text-ink transition focus:border-purple focus:shadow-[0_0_0_3px_rgba(123,47,247,0.15)] focus:outline-none dark:bg-white/5 dark:placeholder:text-ink-soft'
+  "resize-y rounded-[14px] border border-line bg-white/80 px-4 py-[13px] font-body text-[15px] text-ink transition focus:border-purple focus:shadow-[0_0_0_3px_rgba(123,47,247,0.15)] focus:outline-none dark:bg-white/5 dark:placeholder:text-ink-soft";
 
 function Contact() {
-  const [form, setForm] = useState({ name: '', email: '', message: '' })
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
 
   const handleChange = (e) =>
-    setForm((f) => ({ ...f, [e.target.name]: e.target.value }))
+    setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     // No backend yet — open the user's mail client with the message pre-filled.
-    const subject = encodeURIComponent(`Portfolio message from ${form.name}`)
+    const subject = encodeURIComponent(`Portfolio message from ${form.name}`);
     const body = encodeURIComponent(
       `${form.message}\n\n— ${form.name} (${form.email})`,
-    )
-    window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`
-  }
+    );
+    window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
+  };
 
   return (
     <section className="section" id="contact">
@@ -69,7 +69,7 @@ function Contact() {
 
         <form
           className="card reveal flex flex-col gap-[18px] rounded-card-lg p-[34px] max-[720px]:p-7"
-          style={{ '--reveal-delay': '120ms' }}
+          style={{ "--reveal-delay": "120ms" }}
           onSubmit={handleSubmit}
         >
           <label className="flex flex-col gap-2">
@@ -114,7 +114,7 @@ function Contact() {
         </form>
       </div>
     </section>
-  )
+  );
 }
 
-export default Contact
+export default Contact;

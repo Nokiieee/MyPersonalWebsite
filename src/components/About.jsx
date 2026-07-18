@@ -1,4 +1,4 @@
-import nokiPic from '../assets/nokiPic2.JPG'
+import nokiPic from "../assets/nokiPic2.JPG";
 
 function About() {
   return (
@@ -21,14 +21,13 @@ function About() {
 
         <div
           className="reveal max-[960px]:text-center [&_strong]:text-ink"
-          style={{ '--reveal-delay': '120ms' }}
+          style={{ "--reveal-delay": "120ms" }}
         >
           <p className="mb-[18px] text-[17px] leading-[1.75] text-ink-soft">
             Hi, I'm <strong>Enoch Mendoza!</strong> I'm a MERN Stack Developer
             with a passion for turning ideas into real, working web
             applications. I love building projects with MongoDB, Express.js,
-            React, and Node.js — from designing clean APIs to crafting
-            interfaces that just feel right to use.
+            React, and Node.js.
           </p>
           <p className="mb-[18px] text-[17px] leading-[1.75] text-ink-soft">
             When I'm not coding, I'm exploring new tools, sharpening my skills,
@@ -37,7 +36,7 @@ function About() {
             that matter.
           </p>
           <p className="mb-[18px] text-[17px] font-semibold leading-[1.75] text-purple-deep">
-            Let's connect! ✨
+            Let's connect!
           </p>
 
           <div className="my-[26px] flex flex-wrap gap-[14px] max-[420px]:flex-col">
@@ -67,7 +66,7 @@ function About() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default About
+export default About;
