@@ -1,37 +1,37 @@
-import { LuArrowUpRight } from 'react-icons/lu'
-import financeTrackerImg from '../assets/FinanceTracker.png'
-import mcdonaldsImg from '../assets/McDonalds.png'
-import quizReviewerImg from '../assets/QuizReviewer.png'
+import { LuArrowUpRight } from "react-icons/lu";
+import financeTrackerImg from "../assets/FinanceTracker.png";
+import mcdonaldsImg from "../assets/McDonalds.png";
+import quizReviewerImg from "../assets/QuizReviewer.png";
 
 const projects = [
   {
     image: financeTrackerImg,
-    imgClassName: 'object-top',
-    title: 'Personal Finance Tracker',
+    imgClassName: "object-top",
+    title: "Personal Finance Tracker",
     description:
-      'A full-stack MERN app to track income and expenses, manage transactions, and see where your money goes.',
-    tags: ['React', 'Node.js', 'Express', 'MongoDB'],
-    url: 'https://personal-finance-tracker-practice-ten.vercel.app/',
+      "A full-stack MERN app to track income and expenses, manage transactions, and see where your money goes.",
+    tags: ["React", "Node.js", "Express", "MongoDB"],
+    url: "https://personal-finance-tracker-five-tawny.vercel.app/",
   },
   {
     image: mcdonaldsImg,
-    imgClassName: 'object-top',
+    imgClassName: "object-top",
     title: "McDonald's Landing Page",
     description:
       "A responsive McDonald's landing page built with React — a clean recreation of the brand's modern web experience.",
-    tags: ['React', 'CSS3'],
-    url: 'https://mc-donald-s-five.vercel.app/',
+    tags: ["React", "CSS3"],
+    url: "https://mc-donald-s-five.vercel.app/",
   },
   {
     image: quizReviewerImg,
-    imgClassName: 'origin-top scale-[1.75] object-top',
-    title: 'Quiz Reviewer',
+    imgClassName: "origin-top scale-[1.75] object-top",
+    title: "Quiz Reviewer",
     description:
-      'A study tool for building custom flashcard sets and reviewing them with term/definition pairs and progress tracking.',
-    tags: ['HTML5', 'CSS3', 'JavaScript'],
-    url: 'https://quiz-reviewer-cjcz.vercel.app/',
+      "A study tool for building custom flashcard sets and reviewing them with term/definition pairs and progress tracking.",
+    tags: ["HTML5", "CSS3", "JavaScript"],
+    url: "https://quiz-reviewer-cjcz.vercel.app/",
   },
-]
+];
 
 function Projects() {
   return (
@@ -49,7 +49,7 @@ function Projects() {
           <article
             className="card flex flex-col overflow-hidden rounded-card-lg shadow-soft transition hover:-translate-y-2 hover:shadow-hover reveal"
             key={p.title}
-            style={{ '--reveal-delay': `${i * 100}ms` }}
+            style={{ "--reveal-delay": `${i * 100}ms` }}
           >
             <div className="relative h-[190px] overflow-hidden bg-brand">
               <img
@@ -92,7 +92,7 @@ function Projects() {
         ))}
       </div>
     </section>
-  )
+  );
 }
 
-export default Projects
+export default Projects;
