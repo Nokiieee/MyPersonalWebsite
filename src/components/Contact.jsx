@@ -1,5 +1,10 @@
 import { useState } from "react";
-import { LuMail } from "react-icons/lu";
+import {
+  LuCircleAlert,
+  LuCircleCheck,
+  LuLoaderCircle,
+  LuMail,
+} from "react-icons/lu";
 import githubIcon from "../assets/github.svg";
 
 const EMAIL = "denenoch.mendoza@gmail.com";
@@ -8,19 +13,46 @@ const fieldClass =
   "resize-y rounded-[14px] border border-line bg-white/80 px-4 py-[13px] font-body text-[15px] text-ink transition focus:border-purple focus:shadow-[0_0_0_3px_rgba(123,47,247,0.15)] focus:outline-none dark:bg-white/5 dark:placeholder:text-ink-soft";
 
 function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", message: "", website: "" });
+  // "idle" | "sending" | "sent" | "error"
+  const [status, setStatus] = useState("idle");
+  const [error, setError] = useState("");
 
-  const handleChange = (e) =>
+  const handleChange = (e) => {
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
+    if (status === "error") setStatus("idle");
+  };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // No backend yet — open the user's mail client with the message pre-filled.
-    const subject = encodeURIComponent(`Portfolio message from ${form.name}`);
-    const body = encodeURIComponent(
-      `${form.message}\n\n— ${form.name} (${form.email})`,
-    );
-    window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
+    if (status === "sending") return;
+
+    setStatus("sending");
+    setError("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        // data.error means our handler answered. No error field means something
+        // upstream of it did (404, HTML error page, proxy) — surface the status
+        // so the cause is diagnosable instead of guesswork.
+        throw new Error(
+          data.error || `Could not send the message. (HTTP ${res.status})`,
+        );
+      }
+
+      setStatus("sent");
+      setForm({ name: "", email: "", message: "", website: "" });
+    } catch (err) {
+      setStatus("error");
+      setError(err.message || "Something went wrong. Please email me directly.");
+    }
   };
 
   return (
@@ -108,9 +140,54 @@ function Contact() {
               required
             />
           </label>
-          <button type="submit" className="btn btn-primary mt-1.5 self-start">
-            Send Message
-          </button>
+          {/* Honeypot — hidden from humans, irresistible to bots. Not
+              type="hidden", which most bots know to skip. */}
+          <input
+            type="text"
+            name="website"
+            value={form.website}
+            onChange={handleChange}
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            className="absolute left-[-9999px] h-0 w-0 opacity-0"
+          />
+
+          <div className="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-2.5">
+            <button
+              type="submit"
+              className="btn btn-primary disabled:cursor-not-allowed disabled:opacity-70"
+              disabled={status === "sending"}
+            >
+              {status === "sending" ? (
+                <>
+                  <LuLoaderCircle
+                    size={17}
+                    aria-hidden="true"
+                    className="animate-spin"
+                  />
+                  Sending...
+                </>
+              ) : (
+                "Send Message"
+              )}
+            </button>
+
+            <p aria-live="polite" className="text-sm font-medium">
+              {status === "sent" && (
+                <span className="inline-flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400">
+                  <LuCircleCheck size={16} aria-hidden="true" />
+                  Thanks! Your message is on its way.
+                </span>
+              )}
+              {status === "error" && (
+                <span className="inline-flex items-center gap-1.5 text-red-600 dark:text-red-400">
+                  <LuCircleAlert size={16} aria-hidden="true" />
+                  {error}
+                </span>
+              )}
+            </p>
+          </div>
         </form>
       </div>
     </section>
