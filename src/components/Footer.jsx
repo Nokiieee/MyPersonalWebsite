@@ -1,7 +1,8 @@
-import { LuSparkles, LuHeart } from 'react-icons/lu'
+import { LuSparkles } from "react-icons/lu";
+import { SOCIALS } from "../data/socials";
 
 function Footer() {
-  const year = new Date().getFullYear()
+  const year = new Date().getFullYear();
   return (
     <footer className="mt-10 border-t border-line bg-white/55 backdrop-blur-[10px] dark:bg-[rgba(24,18,38,0.55)]">
       <div className="mx-auto flex max-w-[1180px] flex-col items-center gap-3.5 px-6 py-11 text-center">
@@ -51,14 +52,26 @@ function Footer() {
             Contact
           </a>
         </nav>
+        <div className="mt-0.5 flex flex-wrap justify-center gap-x-[18px] gap-y-2.5">
+          {SOCIALS.map(({ label, href, Icon }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={label}
+              className="text-ink-soft transition hover:text-purple"
+            >
+              <Icon size={17} aria-hidden="true" />
+            </a>
+          ))}
+        </div>
         <p className="mt-1.5 inline-flex items-center gap-1 text-[13.5px] text-ink-soft">
-          © {year} Enoch Mendoza. Made with
-          <LuHeart className="text-purple" fill="currentColor" size={14} aria-hidden="true" />
-          &amp; React.
+          © {year} Enoch Mendoza.
         </p>
       </div>
     </footer>
-  )
+  );
 }
 
-export default Footer
+export default Footer;

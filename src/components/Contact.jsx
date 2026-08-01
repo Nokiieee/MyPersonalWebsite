@@ -5,7 +5,7 @@ import {
   LuLoaderCircle,
   LuMail,
 } from "react-icons/lu";
-import githubIcon from "../assets/github.svg";
+import { SOCIALS } from "../data/socials";
 
 const EMAIL = "denenoch.mendoza@gmail.com";
 
@@ -82,20 +82,21 @@ function Contact() {
             {EMAIL}
           </a>
 
-          <div className="mt-7 flex gap-3 max-[720px]:justify-center">
-            <a
-              href="https://github.com/Nokiieee/"
-              className="grid h-[46px] w-[46px] place-items-center rounded-[14px] bg-white/90 transition hover:-translate-y-[3px] hover:bg-white"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="GitHub"
-            >
-              <img
-                src={githubIcon}
-                alt="GitHub"
-                className="h-[22px] w-[22px] object-contain"
-              />
-            </a>
+          {/* Left-aligned even at mobile (where the rest of the card centers),
+              so a wrapped second row lines up under the first. */}
+          <div className="mt-7 flex flex-wrap justify-start gap-3">
+            {SOCIALS.map(({ label, href, Icon }) => (
+              <a
+                key={label}
+                href={href}
+                className="grid h-[46px] w-[46px] place-items-center rounded-[14px] bg-white/90 text-[#15151b] transition hover:-translate-y-[3px] hover:bg-white"
+                target="_blank"
+                rel="noreferrer"
+                aria-label={label}
+              >
+                <Icon size={20} aria-hidden="true" />
+              </a>
+            ))}
           </div>
         </div>
 
