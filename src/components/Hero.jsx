@@ -49,10 +49,10 @@ function Hero() {
             className="h-full w-full rounded-[26px] object-cover"
           />
         </div>
-        <div className="absolute left-[2%] top-[6%] z-[2] animate-bob rounded-2xl border border-line bg-white/90 px-4 py-2.5 text-sm font-semibold text-purple-deep shadow-soft [animation-delay:-2s] dark:bg-[rgba(38,30,56,0.92)]">
+        <div className="absolute left-[2%] top-[6%] z-[2] animate-bob rounded-2xl border border-line bg-white/90 px-4 py-2.5 text-sm font-semibold text-purple-deep shadow-soft [animation-delay:-2s] dark:bg-[rgba(36,29,21,0.92)]">
           &lt;/&gt; Full-Stack
         </div>
-        <div className="absolute bottom-[8%] right-0 z-[2] animate-bob rounded-2xl border border-line bg-white/90 px-4 py-2.5 text-sm font-semibold text-ink shadow-soft [animation-delay:-4s] dark:bg-[rgba(38,30,56,0.92)]">
+        <div className="absolute bottom-[8%] right-0 z-[2] animate-bob rounded-2xl border border-line bg-white/90 px-4 py-2.5 text-sm font-semibold text-ink shadow-soft [animation-delay:-4s] dark:bg-[rgba(36,29,21,0.92)]">
           Let's build
         </div>
       </div>

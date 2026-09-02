@@ -4,7 +4,7 @@ import { SOCIALS } from "../data/socials";
 function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="mt-10 border-t border-line bg-white/55 backdrop-blur-[10px] dark:bg-[rgba(24,18,38,0.55)]">
+    <footer className="mt-10 border-t border-line bg-white/55 backdrop-blur-[10px] dark:bg-[rgba(26,21,16,0.55)]">
       <div className="mx-auto flex max-w-[1180px] flex-col items-center gap-3.5 px-6 py-11 text-center">
         <a
           href="#home"
