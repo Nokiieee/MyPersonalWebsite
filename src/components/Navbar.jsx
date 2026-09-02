@@ -32,7 +32,7 @@ function Navbar() {
     <nav
       className={`sticky top-0 z-50 transition-[background,box-shadow,backdrop-filter] duration-300 ${
         scrolled
-          ? 'bg-white/70 shadow-[0_6px_24px_-14px_rgba(123,47,247,0.4)] backdrop-blur-[14px] dark:bg-[rgba(24,18,38,0.72)] dark:shadow-[0_6px_24px_-14px_rgba(0,0,0,0.6)]'
+          ? 'bg-white/70 shadow-[0_6px_24px_-14px_rgba(43,34,20,0.3)] backdrop-blur-[14px] dark:bg-[rgba(26,21,16,0.72)] dark:shadow-[0_6px_24px_-14px_rgba(0,0,0,0.6)]'
           : ''
       }`}
     >
@@ -52,7 +52,7 @@ function Navbar() {
 
         <div className="flex items-center gap-2.5">
           <ul
-            className={`m-0 flex list-none items-center gap-1 p-0 max-[960px]:fixed max-[960px]:right-0 max-[960px]:top-0 max-[960px]:h-dvh max-[960px]:w-[min(78vw,320px)] max-[960px]:flex-col max-[960px]:items-start max-[960px]:justify-start max-[960px]:gap-1.5 max-[960px]:px-[26px] max-[960px]:pb-10 max-[960px]:pt-24 max-[960px]:shadow-[-12px_0_40px_-12px_rgba(123,47,247,0.35)] max-[960px]:backdrop-blur-[16px] max-[960px]:transition-transform max-[960px]:duration-300 dark:max-[960px]:bg-[rgba(24,18,38,0.96)] max-[960px]:bg-white/95 ${
+            className={`m-0 flex list-none items-center gap-1 p-0 max-[960px]:fixed max-[960px]:right-0 max-[960px]:top-0 max-[960px]:h-dvh max-[960px]:w-[min(78vw,320px)] max-[960px]:flex-col max-[960px]:items-start max-[960px]:justify-start max-[960px]:gap-1.5 max-[960px]:px-[26px] max-[960px]:pb-10 max-[960px]:pt-24 max-[960px]:shadow-[-12px_0_40px_-12px_rgba(43,34,20,0.3)] max-[960px]:backdrop-blur-[16px] max-[960px]:transition-transform max-[960px]:duration-300 dark:max-[960px]:bg-[rgba(26,21,16,0.96)] max-[960px]:bg-white/95 ${
               open
                 ? 'max-[960px]:visible max-[960px]:translate-x-0'
                 : 'max-[960px]:pointer-events-none max-[960px]:invisible max-[960px]:translate-x-full'

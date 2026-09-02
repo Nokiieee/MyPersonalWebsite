@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400..900;1,400..800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap');
 @import 'tailwindcss';
 
 /* Dark mode is driven by the data-theme attribute that the useTheme hook
@@ -14,30 +14,30 @@
   --c-purple: #7b2ff7;
   --c-purple-deep: #5a1fd0;
   --c-pink: #ff7eb3;
-  --c-ink: #2c2440;
-  --c-ink-soft: #6b6382;
-  --c-card: rgba(255, 255, 255, 0.72);
-  --c-line: rgba(184, 139, 255, 0.28);
+  --c-ink: #2b2419;
+  --c-ink-soft: #6b6154;
+  --c-card: rgba(255, 253, 247, 0.8);
+  --c-line: rgba(58, 46, 30, 0.14);
 
-  --sh-soft: 0 18px 40px -18px rgba(123, 47, 247, 0.35);
-  --sh-hover: 0 26px 55px -18px rgba(123, 47, 247, 0.5);
+  --sh-soft: 0 18px 40px -18px rgba(43, 34, 20, 0.22);
+  --sh-hover: 0 26px 55px -18px rgba(43, 34, 20, 0.32);
 
   --gradient-brand: linear-gradient(120deg, #7b2ff7 0%, #b16cff 45%, #ff7eb3 100%);
-  --page-bg: linear-gradient(150deg, #f6f0ff 0%, #fdeeffcc 40%, #fff4ec 100%);
+  --page-bg: linear-gradient(160deg, #fdfaf3 0%, #faf4e6 45%, #f6eeda 100%);
 }
 
 [data-theme='dark'] {
   --c-purple: #a982ff;
   --c-purple-deep: #8b5bff;
-  --c-ink: #ece8f7;
-  --c-ink-soft: #a9a2c4;
-  --c-card: rgba(38, 30, 56, 0.62);
-  --c-line: rgba(169, 130, 255, 0.24);
+  --c-ink: #ece3d1;
+  --c-ink-soft: #b3a68e;
+  --c-card: rgba(34, 28, 20, 0.62);
+  --c-line: rgba(236, 227, 209, 0.14);
 
   --sh-soft: 0 18px 40px -18px rgba(0, 0, 0, 0.6);
   --sh-hover: 0 26px 55px -18px rgba(0, 0, 0, 0.72);
 
-  --page-bg: linear-gradient(150deg, #120e1f 0%, #1a1330 45%, #1b1426 100%);
+  --page-bg: linear-gradient(160deg, #1c1712 0%, #201a13 45%, #17130e 100%);
 }
 
 @theme inline {
@@ -55,22 +55,11 @@
   --radius-card: 22px;
   --radius-card-lg: 30px;
 
-  --font-display: 'Montserrat', sans-serif;
+  --font-display: 'Playfair Display', serif;
   --font-body: 'Poppins', system-ui, sans-serif;
 
-  --animate-float: float 16s ease-in-out infinite;
   --animate-bob: bob 6s ease-in-out infinite;
   --animate-hero-fade-up: hero-fade-up 1.4s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translate(0, 0) scale(1);
-  }
-  50% {
-    transform: translate(30px, -30px) scale(1.08);
-  }
 }
 
 @keyframes bob {
@@ -105,6 +94,7 @@
   }
 
   body {
+    position: relative;
     margin: 0;
     overflow-x: clip;
     overscroll-behavior-x: none;
@@ -112,8 +102,32 @@
     font-family: var(--font-body);
     color: var(--c-ink);
     background: var(--page-bg);
-    background-attachment: fixed;
     -webkit-font-smoothing: antialiased;
+  }
+
+  /* Paper-grain texture: a tiled photo of real fibrous paper, blended over
+     the page gradient so the background reads as textured paper rather than
+     a flat gradient. mix-blend-mode: multiply keeps the cream base color and
+     only darkens where the paper photo has fiber/dust detail. Absolutely
+     positioned (not fixed) so it scrolls with the page instead of staying
+     pinned to the viewport. */
+  body::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image: url('./assets/paper.jpg');
+    background-size: 700px auto;
+    background-repeat: repeat;
+    opacity: 0.5;
+    mix-blend-mode: multiply;
+  }
+
+  [data-theme='dark'] body::before {
+    opacity: 0.16;
+    mix-blend-mode: screen;
+    filter: invert(1) grayscale(1);
   }
 
   * {
@@ -170,7 +184,7 @@
     box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--skill-color) 28%, transparent);
   }
   [data-theme='dark'] .skill-icon {
-    background: color-mix(in srgb, var(--skill-color) 26%, #241b33);
+    background: color-mix(in srgb, var(--skill-color) 26%, #231c14);
   }
 }
 
