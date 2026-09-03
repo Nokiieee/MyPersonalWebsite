@@ -10,7 +10,7 @@ import { SOCIALS } from "../data/socials";
 const EMAIL = "denenoch.mendoza@gmail.com";
 
 const fieldClass =
-  "resize-y rounded-[14px] border border-line bg-white/80 px-4 py-[13px] font-body text-[15px] text-ink transition focus:border-purple focus:shadow-[0_0_0_3px_rgba(123,47,247,0.15)] focus:outline-none dark:bg-white/5 dark:placeholder:text-ink-soft";
+  "resize-y rounded-[14px] border border-line bg-white/80 px-4 py-[13px] font-body text-[15px] text-ink transition focus:border-purple focus:shadow-[0_0_0_3px_rgba(0,0,0,0.12)] focus:outline-none dark:bg-white/5 dark:placeholder:text-ink-soft dark:focus:shadow-[0_0_0_3px_rgba(255,255,255,0.12)]";
 
 function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "", website: "" });
@@ -67,7 +67,7 @@ function Contact() {
       </div>
 
       <div className="grid grid-cols-[1fr_1.15fr] items-stretch gap-10 max-[960px]:grid-cols-1">
-        <div className="reveal rounded-card-lg bg-brand p-10 text-white shadow-soft max-[720px]:p-7 max-[720px]:text-center">
+        <div className="reveal rounded-card-lg bg-brand p-10 text-ink-contrast shadow-soft max-[720px]:p-7 max-[720px]:text-center">
           <h3 className="mb-3.5 text-[26px] font-extrabold">Get in touch ✨</h3>
           <p className="mb-[30px] text-base leading-[1.7] opacity-90">
             I'm currently open to remote opportunities where I can learn,
@@ -76,7 +76,7 @@ function Contact() {
 
           <a
             href={`mailto:${EMAIL}`}
-            className="inline-flex items-center gap-2.5 break-all rounded-[14px] bg-white/[0.18] px-[18px] py-3 text-[15px] font-semibold transition hover:bg-white/30 max-[720px]:justify-center"
+            className="inline-flex items-center gap-2.5 break-all rounded-[14px] bg-ink-contrast/[0.18] px-[18px] py-3 text-[15px] font-semibold transition hover:bg-ink-contrast/30 max-[720px]:justify-center"
           >
             <LuMail size={18} aria-hidden="true" />
             {EMAIL}
@@ -89,7 +89,7 @@ function Contact() {
               <a
                 key={label}
                 href={href}
-                className="grid h-[46px] w-[46px] place-items-center rounded-[14px] bg-white/90 text-[#15151b] transition hover:-translate-y-[3px] hover:bg-white"
+                className="grid h-[46px] w-[46px] place-items-center rounded-[14px] bg-ink-contrast/90 text-ink transition hover:-translate-y-[3px] hover:bg-ink-contrast"
                 target="_blank"
                 rel="noreferrer"
                 aria-label={label}

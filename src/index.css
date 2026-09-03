@@ -11,41 +11,46 @@
    so `bg-card`, `text-ink`, `shadow-soft`, etc. update with the theme.
    ------------------------------------------------------------------ */
 :root {
-  --c-purple: #7b2ff7;
-  --c-purple-deep: #5a1fd0;
-  --c-pink: #ff7eb3;
+  /* "purple" is a legacy name from the site's old brand-color scheme — the
+     monochrome paper redesign repoints it to ink/charcoal instead of
+     renaming every text-purple/bg-purple usage across components. */
+  --c-purple: #2b2419;
+  --c-purple-deep: #14100a;
   --c-ink: #2b2419;
   --c-ink-soft: #6b6154;
+  --c-ink-contrast: #fdfaf3;
   --c-card: rgba(255, 253, 247, 0.8);
   --c-line: rgba(58, 46, 30, 0.14);
 
   --sh-soft: 0 18px 40px -18px rgba(43, 34, 20, 0.22);
   --sh-hover: 0 26px 55px -18px rgba(43, 34, 20, 0.32);
 
-  --gradient-brand: linear-gradient(120deg, #7b2ff7 0%, #b16cff 45%, #ff7eb3 100%);
+  --gradient-brand: linear-gradient(120deg, #332b1e 0%, #241d13 55%, #14100a 100%);
   --page-bg: linear-gradient(160deg, #fdfaf3 0%, #faf4e6 45%, #f6eeda 100%);
 }
 
 [data-theme='dark'] {
-  --c-purple: #a982ff;
-  --c-purple-deep: #8b5bff;
+  --c-purple: #ece3d1;
+  --c-purple-deep: #fffaf0;
   --c-ink: #ece3d1;
   --c-ink-soft: #b3a68e;
+  --c-ink-contrast: #17130e;
   --c-card: rgba(34, 28, 20, 0.62);
   --c-line: rgba(236, 227, 209, 0.14);
 
   --sh-soft: 0 18px 40px -18px rgba(0, 0, 0, 0.6);
   --sh-hover: 0 26px 55px -18px rgba(0, 0, 0, 0.72);
 
+  --gradient-brand: linear-gradient(120deg, #f7f1e2 0%, #f0e8d4 55%, #e8dec4 100%);
   --page-bg: linear-gradient(160deg, #1c1712 0%, #201a13 45%, #17130e 100%);
 }
 
 @theme inline {
   --color-purple: var(--c-purple);
   --color-purple-deep: var(--c-purple-deep);
-  --color-pink: var(--c-pink);
   --color-ink: var(--c-ink);
   --color-ink-soft: var(--c-ink-soft);
+  --color-ink-contrast: var(--c-ink-contrast);
   --color-card: var(--c-card);
   --color-line: var(--c-line);
 
@@ -150,7 +155,7 @@
     @apply px-[18px] py-[9px] text-[13.5px];
   }
   .btn-primary {
-    @apply bg-purple text-white shadow-soft hover:-translate-y-0.5 hover:bg-purple-deep hover:shadow-hover;
+    @apply bg-purple text-ink-contrast shadow-soft hover:-translate-y-0.5 hover:bg-purple-deep hover:shadow-hover;
   }
   .btn-ghost {
     @apply border-purple bg-white/60 text-purple-deep hover:-translate-y-0.5 hover:bg-white/95 dark:bg-white/5 dark:text-purple dark:hover:bg-white/10;
@@ -169,7 +174,7 @@
     @apply mx-auto mb-[54px] max-w-[640px] text-center max-[720px]:mb-10;
   }
   .eyebrow {
-    @apply mb-4 inline-block rounded-full bg-[rgba(184,139,255,0.16)] px-4 py-1.5 text-[13px] font-semibold uppercase tracking-[1.5px] text-purple;
+    @apply mb-4 inline-block rounded-full bg-ink/8 px-4 py-1.5 text-[13px] font-semibold uppercase tracking-[1.5px] text-purple;
   }
   .section-title {
     @apply text-[clamp(30px,5vw,46px)] font-extrabold text-ink;

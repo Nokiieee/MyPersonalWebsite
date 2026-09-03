@@ -50,7 +50,7 @@ function Services() {
             key={s.title}
             style={{ '--reveal-delay': `${i * 100}ms` }}
           >
-            <span className="mb-5 grid h-[60px] w-[60px] place-items-center rounded-[18px] bg-brand text-white shadow-soft">
+            <span className="mb-5 grid h-[60px] w-[60px] place-items-center rounded-[18px] bg-brand text-ink-contrast shadow-soft">
               <s.Icon size={28} strokeWidth={1.75} aria-hidden="true" />
             </span>
             <h3 className="mb-3 text-[19px] font-bold text-ink">{s.title}</h3>
