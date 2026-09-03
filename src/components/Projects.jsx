@@ -70,7 +70,7 @@ function Projects() {
                 {p.tags.map((t) => (
                   <span
                     key={t}
-                    className="rounded-full bg-[rgba(184,139,255,0.16)] px-3 py-[5px] text-xs font-semibold text-purple-deep"
+                    className="rounded-full bg-ink/8 px-3 py-[5px] text-xs font-semibold text-purple-deep"
                   >
                     {t}
                   </span>
