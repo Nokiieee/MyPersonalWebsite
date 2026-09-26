@@ -5,17 +5,19 @@ const services = [
     Icon: LuPalette,
     title: 'Front-End Development',
     description:
-      'Building responsive, user-friendly interfaces with React.js, HTML5, and CSS3.',
+      'Building responsive, user-friendly interfaces with Next.js, React, TypeScript, and Tailwind CSS.',
   },
   {
     Icon: LuPlug,
     title: 'Back-End Development',
-    description: 'Designing RESTful APIs with Node.js and Express.js.',
+    description:
+      'Building APIs and server-side logic with Next.js and TypeScript, backed by Supabase.',
   },
   {
     Icon: LuDatabase,
     title: 'Database Design',
-    description: 'Structuring and managing data using MongoDB.',
+    description:
+      'Structuring and managing data with Supabase and PostgreSQL, including authentication.',
   },
   {
     Icon: LuPuzzle,

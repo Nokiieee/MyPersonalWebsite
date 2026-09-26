@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-A single-page personal portfolio for Enoch Mendoza (MERN stack developer), built with React 19 + Vite + Tailwind CSS v4. No backend, no router, no state library — all sections render on one page and the contact "form" opens a pre-filled `mailto:` link (see `src/components/Contact.jsx`).
+A single-page personal portfolio for Enoch Mendoza (full-stack developer — Next.js, TypeScript, Supabase), built with React 19 + Vite + Tailwind CSS v4. No backend, no router, no state library — all sections render on one page and the contact "form" opens a pre-filled `mailto:` link (see `src/components/Contact.jsx`).
 
 ## Commands
 
