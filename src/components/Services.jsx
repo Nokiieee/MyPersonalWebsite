@@ -11,13 +11,13 @@ const services = [
     Icon: LuPlug,
     title: 'Back-End Development',
     description:
-      'Building APIs and server-side logic with Next.js and TypeScript, backed by Supabase.',
+      'Writing server-side logic with Next.js Server Actions and route handlers, with input validation and Supabase auth.',
   },
   {
     Icon: LuDatabase,
     title: 'Database Design',
     description:
-      'Structuring and managing data with Supabase and PostgreSQL, including authentication.',
+      'Designing PostgreSQL schemas on Supabase with authentication and row-level security.',
   },
   {
     Icon: LuPuzzle,

@@ -1,9 +1,31 @@
-import { LuArrowUpRight } from "react-icons/lu";
+import { LuArrowUpRight, LuHammer } from "react-icons/lu";
 import financeTrackerImg from "../assets/FinanceTracker.png";
 import mcdonaldsImg from "../assets/McDonalds.png";
 import quizReviewerImg from "../assets/QuizReviewer.png";
+import movieTrackerImg from "../assets/MovieTracker.jpg";
+import packlyImg from "../assets/Packly.jpg";
 
+// An optional `status` shows as a badge over the screenshot (e.g. "In progress").
 const projects = [
+  {
+    image: movieTrackerImg,
+    imgClassName: "object-center",
+    title: "Movie Tracker",
+    description:
+      "A personal movie watchlist with sign-up and email confirmation. Sort movies into Want to Watch, Watching, or Watched, add star ratings and notes — each list kept private with row-level security.",
+    tags: ["Next.js", "TypeScript", "Supabase", "Tailwind"],
+    url: "https://movie-tracker-pied-omega.vercel.app/",
+  },
+  {
+    image: packlyImg,
+    imgClassName: "object-top",
+    title: "Packly",
+    status: "In progress",
+    description:
+      "A travel companion that answers what you're doing, wearing, eating, and bringing today. Accounts and the packing checklist are live; outfit and food planners are next.",
+    tags: ["Next.js", "TypeScript", "Supabase", "Tailwind"],
+    url: "https://packly-nine.vercel.app/",
+  },
   {
     image: financeTrackerImg,
     imgClassName: "object-top",
@@ -58,6 +80,12 @@ function Projects() {
                 loading="lazy"
                 className={`h-full w-full object-cover ${p.imgClassName}`}
               />
+              {p.status && (
+                <span className="absolute right-3 top-3 inline-flex items-center gap-1.5 rounded-full border border-line bg-white/90 px-3 py-[5px] text-xs font-semibold text-purple-deep shadow-soft backdrop-blur-[6px] dark:bg-[rgba(36,29,21,0.92)]">
+                  <LuHammer size={13} aria-hidden="true" />
+                  {p.status}
+                </span>
+              )}
             </div>
             <div className="flex flex-1 flex-col p-6">
               <h3 className="mb-2.5 text-[21px] font-bold text-ink">
