@@ -11,7 +11,7 @@ function Hero() {
     >
       <div className="animate-hero-fade-up">
         <span className="mb-[22px] inline-block rounded-full border border-line bg-white/70 px-[18px] py-2 text-sm font-semibold text-purple-deep dark:bg-white/5">
-          MERN Stack Developer
+          Full Stack Developer
         </span>
         <h1 className="text-[clamp(38px,6vw,66px)] font-extrabold leading-[1.05] text-ink">
           Hi, I'm{" "}
