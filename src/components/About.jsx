@@ -24,10 +24,10 @@ function About() {
           style={{ "--reveal-delay": "120ms" }}
         >
           <p className="mb-[18px] text-[17px] leading-[1.75] text-ink-soft">
-            Hi, I'm <strong>Enoch Mendoza!</strong> I'm a MERN Stack Developer
+            Hi, I'm <strong>Enoch Mendoza!</strong> I'm a Full-Stack Developer
             with a passion for turning ideas into real, working web
-            applications. I love building projects with MongoDB, Express.js,
-            React, and Node.js.
+            applications. I love building projects with Next.js, TypeScript,
+            and Supabase.
           </p>
           <p className="mb-[18px] text-[17px] leading-[1.75] text-ink-soft">
             When I'm not coding, I'm exploring new tools, sharpening my skills,
@@ -42,7 +42,7 @@ function About() {
           <div className="my-[26px] flex flex-wrap gap-[14px] max-[420px]:flex-col">
             <div className="card min-w-[120px] flex-1 rounded-card p-[18px] text-center">
               <span className="block font-display text-[22px] font-extrabold text-purple">
-                MERN
+                Next.js
               </span>
               <span className="text-[13px] text-ink-soft">Stack Focused</span>
             </div>

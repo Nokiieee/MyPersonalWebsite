@@ -1,6 +1,7 @@
 # Enoch Mendoza — Portfolio
 
-A personal portfolio website for **Enoch Mendoza**, a MERN Stack Developer.
+A personal portfolio website for **Enoch Mendoza**, a Full-Stack Developer
+working with Next.js, TypeScript, and Supabase.
 Built as a single-page React app with a soft anime-inspired pastel theme, smooth
 scroll-reveal animations, and full light/dark mode support.
 

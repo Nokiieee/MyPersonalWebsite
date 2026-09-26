@@ -11,15 +11,16 @@ function Hero() {
     >
       <div className="animate-hero-fade-up">
         <span className="mb-[22px] inline-block rounded-full border border-line bg-white/70 px-[18px] py-2 text-sm font-semibold text-purple-deep dark:bg-white/5">
-          MERN Stack Developer
+          Full Stack Developer
         </span>
         <h1 className="text-[clamp(38px,6vw,66px)] font-extrabold leading-[1.05] text-ink">
           Hi, I'm{" "}
           <span className="inline-block text-purple">Enoch Mendoza</span>
         </h1>
         <p className="mt-[22px] max-w-[500px] text-lg leading-[1.7] text-ink-soft max-[960px]:mx-auto">
-          A full-stack developer who builds web applications using MERN Stack. I
-          turn ideas into real, working web applications
+          A full-stack developer who builds web applications with Next.js,
+          TypeScript, and Supabase. I turn ideas into real, working web
+          applications.
         </p>
         <div className="mt-8 flex flex-wrap gap-[14px] max-[960px]:justify-center">
           <a href="#projects" className="btn btn-primary max-[420px]:flex-1">
@@ -30,10 +31,10 @@ function Hero() {
           </a>
         </div>
         <div className="mt-[34px] flex flex-wrap gap-2.5 max-[960px]:justify-center">
-          <span className={`${pill} bg-white/65`}>React</span>
-          <span className={`${pill} bg-white/65`}>Node.js</span>
-          <span className={`${pill} bg-white/65`}>Express</span>
-          <span className={`${pill} bg-white/65`}>MongoDB</span>
+          <span className={`${pill} bg-white/65`}>Next.js</span>
+          <span className={`${pill} bg-white/65`}>TypeScript</span>
+          <span className={`${pill} bg-white/65`}>Supabase</span>
+          <span className={`${pill} bg-white/65`}>PostgreSQL</span>
         </div>
       </div>
 

@@ -18,7 +18,7 @@ function Footer() {
           />
         </a>
         <p className="text-[15px] text-ink-soft">
-          MERN Stack Developer · Building things that matter.
+          Full-Stack Developer · Building things that matter.
         </p>
         <nav className="flex flex-wrap justify-center gap-x-[22px] gap-y-2">
           <a
