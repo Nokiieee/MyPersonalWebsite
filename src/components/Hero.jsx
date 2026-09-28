@@ -6,16 +6,18 @@ const pill =
 function Hero() {
   return (
     <header
-      className="mx-auto grid max-w-[1180px] scroll-mt-20 grid-cols-[1.05fr_0.95fr] items-center gap-10 px-6 pb-[90px] pt-[70px] min-h-[calc(100vh-72px)] max-[960px]:min-h-0 max-[960px]:grid-cols-1 max-[960px]:gap-12 max-[960px]:pt-12 max-[960px]:text-center max-[420px]:pt-8"
+      className="mx-auto grid max-w-[1180px] scroll-mt-20 grid-cols-[1.05fr_0.95fr] items-center gap-10 px-14 pb-[90px] pt-[70px] min-h-[calc(100vh-72px)] max-[960px]:min-h-0 max-[960px]:grid-cols-1 max-[960px]:gap-12 max-[960px]:pt-12 max-[960px]:text-center max-[420px]:pt-8"
       id="home"
     >
       <div className="animate-hero-fade-up">
         <span className="mb-[22px] inline-block rounded-full border border-line bg-white/70 px-[18px] py-2 text-sm font-semibold text-purple-deep dark:bg-white/5">
           Full Stack Developer
         </span>
-        <h1 className="text-[clamp(38px,6vw,66px)] font-extrabold leading-[1.05] text-ink">
+        <h1 className="text-[clamp(38px,5.5vw,66px)] font-extrabold leading-[1.05] text-ink">
           Hi, I'm{" "}
-          <span className="inline-block text-purple">Enoch Mendoza</span>
+          <span className="inline-block whitespace-nowrap text-purple max-[960px]:whitespace-normal">
+            Enoch Mendoza
+          </span>
         </h1>
         <p className="mt-[22px] max-w-[500px] text-lg leading-[1.7] text-ink-soft max-[960px]:mx-auto">
           A full-stack developer who builds web applications with Next.js,
@@ -39,10 +41,6 @@ function Hero() {
       </div>
 
       <div className="relative flex animate-hero-fade-up items-center justify-center [animation-delay:150ms] max-[960px]:order-first">
-        <div
-          className="absolute z-0 aspect-square w-[78%] rounded-full bg-brand opacity-45 blur-[60px]"
-          aria-hidden="true"
-        />
         <div className="relative z-[1] aspect-[4/5] w-[min(360px,78%)] animate-bob rounded-[34px] border border-line bg-[linear-gradient(150deg,rgba(255,255,255,0.9),rgba(255,255,255,0.4))] p-2.5 shadow-soft backdrop-blur-[6px]">
           <img
             src={nokiPic}
