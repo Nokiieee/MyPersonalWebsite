@@ -1,4 +1,4 @@
-import nokiPic from "../assets/nokiPic.jpg";
+import nokiPic from "../assets/nokiPic.png";
 
 const pill =
   "rounded-full border border-line px-[15px] py-[7px] text-[13px] font-semibold text-purple-deep dark:bg-white/5";
