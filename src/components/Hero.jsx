@@ -41,7 +41,7 @@ function Hero() {
       </div>
 
       <div className="relative flex animate-hero-fade-up items-center justify-center [animation-delay:150ms] max-[960px]:order-first">
-        <div className="relative z-[1] aspect-[4/5] w-[min(360px,78%)] animate-bob rounded-[34px] border border-line bg-[linear-gradient(150deg,rgba(255,255,255,0.9),rgba(255,255,255,0.4))] p-2.5 shadow-soft backdrop-blur-[6px]">
+        <div className="relative z-[1] aspect-[4/5] w-[min(410px,86%)] animate-bob rounded-[34px] border border-line bg-[linear-gradient(150deg,rgba(255,255,255,0.9),rgba(255,255,255,0.4))] p-2.5 shadow-soft backdrop-blur-[6px]">
           <img
             src={nokiPic}
             alt="Enoch Mendoza"
