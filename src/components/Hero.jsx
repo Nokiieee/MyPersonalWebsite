@@ -40,18 +40,18 @@ function Hero() {
         </div>
       </div>
 
-      <div className="relative flex animate-hero-fade-up items-center justify-center [animation-delay:150ms] max-[960px]:order-first">
-        <div className="relative z-[1] aspect-[4/5] w-[min(410px,86%)] max-[720px]:w-[min(410px,100%)] animate-bob rounded-[34px] border border-line bg-[linear-gradient(150deg,rgba(255,255,255,0.9),rgba(255,255,255,0.4))] p-2.5 shadow-soft backdrop-blur-[6px]">
+      <div className="relative flex animate-hero-fade-up items-center justify-center [animation-delay:150ms] max-[960px]:order-first max-[960px]:mx-auto max-[960px]:w-[min(410px,100%)]">
+        <div className="relative z-[1] aspect-[4/5] w-[min(410px,86%)] max-[960px]:w-full animate-bob rounded-[34px] border border-line bg-[linear-gradient(150deg,rgba(255,255,255,0.9),rgba(255,255,255,0.4))] p-2.5 shadow-soft backdrop-blur-[6px]">
           <img
             src={nokiPic}
             alt="Enoch Mendoza"
             className="h-full w-full rounded-[26px] object-cover"
           />
         </div>
-        <div className="absolute left-[2%] top-[6%] z-[2] max-[720px]:-left-10 animate-bob rounded-2xl border border-line bg-white/90 px-4 py-2.5 text-sm font-semibold text-purple-deep shadow-soft [animation-delay:-2s] dark:bg-[rgba(36,29,21,0.92)]">
+        <div className="absolute left-[2%] top-[6%] z-[2] max-[960px]:-left-10 animate-bob rounded-2xl border border-line bg-white/90 px-4 py-2.5 text-sm font-semibold text-purple-deep shadow-soft [animation-delay:-2s] dark:bg-[rgba(36,29,21,0.92)]">
           &lt;/&gt; Full-Stack
         </div>
-        <div className="absolute bottom-[8%] right-0 z-[2] max-[720px]:-right-10 animate-bob rounded-2xl border border-line bg-white/90 px-4 py-2.5 text-sm font-semibold text-ink shadow-soft [animation-delay:-4s] dark:bg-[rgba(36,29,21,0.92)]">
+        <div className="absolute bottom-[8%] right-0 z-[2] max-[960px]:-right-10 animate-bob rounded-2xl border border-line bg-white/90 px-4 py-2.5 text-sm font-semibold text-ink shadow-soft [animation-delay:-4s] dark:bg-[rgba(36,29,21,0.92)]">
           Let's build
         </div>
       </div>
